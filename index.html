@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/images/favicon.png">
+
+    <title>XPlay WebUI</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/ekko-lightbox.min.css" rel="stylesheet">
+
+    <link href="css/xplay.css" rel="stylesheet">
+
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/ekko-lightbox.min.js"></script>
+    <script>
+      $(document).delegate('*[data-toggle="lightbox"]', 'click', function(event) { event.preventDefault(); $(this).ekkoLightbox(); }); 
+    </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <a href="https://github.com/metacoder-de/xplay-webui"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+    
+    <div class="container">
+      <div class="jumbotron">
+        <h1>XPlay WebUI</h1>
+        <p>A small tool which visualizes your aircraft on a google maps map in real time.</p>
+        <p>
+          <a class="btn btn-lg btn-primary" href="download/xplay-webui-1.2.zip" role="button">Download v1.2 (ZIP)</a>
+          <a class="btn btn-lg btn-primary" href="download/xplay-webui-1.2.jar" role="button">Download v1.2 (JAR)</a>
+        </p>
+      </div>
+
+      <h2>Screenshot</h2>
+      <p><img src="images/xplay-1.2.png" style="width: 100%;"/></p>
+
+      <h2>Installation</h2>
+      <p>Just <a href="download/xplay-webui-1.2.zip">download</a> and extract it on the machine where you want to run it. In xplane, configure the following:</p>
+      <p>
+        <a href="images/config-xplane-datainout.png" data-toggle="lightbox" data-gallery="multiimages" data-title="X-Plane Configuration"><img src="images/small/config-xplane-datainout.png"/></a>
+        <a href="images/config-xplane-net-data.png" data-toggle="lightbox" data-gallery="multiimages" data-title="X-Plane Configuration"><img src="images/small/config-xplane-net-data.png"/></a>
+      </p>
+      <p>
+        <ul>
+          <li>Go to Settings -> Data Input & Output -> Tab Data Set and check enabled: internet and the checkbox in the first row of position 3, 17 and 20.</li>
+          <li>Then go to Settings -> Net Connections -> Tab Data and set the IP for Data Output to the IP where you want to run your visualizer, on this screenshot we are running it on the same machine as xplane so it's 127.0.0.1. Set the Port to 48000 and check "IP of data receiver".</li>
+        </ul>
+      </p>
+      <p>Now your xplane should send the required data via UDP. Go to the xplay-webui-Directory and open the bin sub folder. On linux / mac run ./xplay-webui, on windows start xplay-webui.bat</p>
+      <p>
+        When everything worked as expected, you should see an output like that:
+        <pre>
+[info] play - Application started (Prod)
+[info] play - Listening for HTTP on /0:0:0:0:0:0:0:0:9000</pre>
+      </p>
+      <p>Then open your browser and connect to <a href="http://localhost:9000" target="_blank">http://localhost:9000</a> - you should see your plane on google maps now.</p>
+    </div>
+  </body>
+</html>
