@@ -1,11 +1,4 @@
 body {
+  padding-top: 20px;
   padding-bottom: 20px;
-}
-
-.github-link, .github-link img {
-  z-index: 1500;
-}
-
-.navbar-toggle {
-  margin: 8px 0 8px 15px;
 }
